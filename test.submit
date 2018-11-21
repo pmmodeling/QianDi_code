@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -J test
+#SBATCH -N 1            # number of nodes
+#SBATCH -c 1           # number of cores per node
+#SBATCH -o test_%A_%a.out
+#SBATCH -e test_%A_%a.err
+#SBATCH -t 10 #Runtime in minutes 
+#SBATCH -p serial_requeue #Partition to submit to 
+#SBATCH --mem=1g        # memory per node
+#SBATCH --mail-type=END      #Type of email notification- BEGIN,END,FAIL,ALL
+#SBATCH --mail-user=qiandi@mail.harvard.edu  #Email to which notifications will be sent
+
+cd /n/home02/xqiu/GitHub/odyssey_airpred/
+Rscript test.R "${SLURM_ARRAY_TASK_ID}" test_"${SLURM_ARRAY_TASK_ID}".out

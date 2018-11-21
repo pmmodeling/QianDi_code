@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -J multih2o
+#SBATCH -N 20           # number of nodes
+#SBATCH -c 10           # number of cores per node
+#SBATCH -o starth2_multinode_%A.out
+#SBATCH -e starth2_multinode_%A.err
+#SBATCH -t 10000 #Runtime in minutes
+#SBATCH -p shared #Partition to submit to 
+#SBATCH --mem=10g        # memory per node
+#SBATCH --mail-type=ALL #Type of email notification- BEGIN,END,FAIL,ALL
+#SBATCH --mail-user=qiandi@mail.harvard.edu  #Email to which will be sent
+
+cd /n/home02/xqiu/GitHub/odyssey_airpred/
+Rscript starth2o_multinode.R starth2o_multinode.out

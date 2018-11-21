@@ -1,0 +1,7 @@
+print(Sys.getenv("SLURM_JOB_ID"))
+print(Sys.getenv("SLURM_ARRAY_JOB_ID"))
+print(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+print(Sys.getenv("SLURM_ARRAY_TASK_COUNT"))
+print(Sys.getenv("SLURM_ARRAY_TASK_MAX"))
+print(Sys.getenv("SLURM_ARRAY_TASK_MIN"))
+print(paste0(Sys.getenv("SLURM_ARRAY_JOB_ID"),"_",Sys.getenv("SLURM_ARRAY_TASK_ID")))

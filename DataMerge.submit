@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH -J DataMerge
+#SBATCH -N 1            # number of nodes
+#SBATCH -c 1           # number of cores per node
+#SBATCH -o DataMerge_%A_%a.out
+#SBATCH -e DataMerge_%A_%a.err
+#SBATCH -t 4000 #Runtime in minutes 
+#SBATCH -p shared #Partition to submit to 
+#SBATCH --mem=4g        # memory per node
+#SBATCH --mail-type=END      #Type of email notification- BEGIN,END,FAIL,ALL
+#SBATCH --mail-user=qiandi@mail.harvard.edu  #Email to which notifications will be sent
+
+cd /n/home02/xqiu/GitHub/odyssey_airpred/
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2000 "" 99937 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2001 "" 99937 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2002 "" 99938 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2009 "" 99940 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2003 "" 99938 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2004 "" 99938 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2010 "" 99940 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2011 "" 99940 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2012 "" 99940 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2013 "" 99940 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2014 "" 99940 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2015 "" 99939 DataMerge_"${SLURM_ARRAY_TASK_ID}".out
+#Rscript DataMerge.R "${SLURM_ARRAY_TASK_ID}" 2016 "" 99939 DataMerge_"${SLURM_ARRAY_TASK_ID}".out

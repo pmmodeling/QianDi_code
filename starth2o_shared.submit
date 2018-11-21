@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -J h2o_shared
+#SBATCH -N 1            # number of nodes
+#SBATCH -c 30           # number of cores per node
+#SBATCH -o starth2o_shared_%A_%a.out
+#SBATCH -e starth2o_shared_%A_%a.err
+#SBATCH -t 10000 #Runtime in minutes
+#SBATCH -p shared #Partition to submit to 
+#SBATCH --mem=30g        # memory per node
+#SBATCH --mail-type=ALL #Type of email notification- BEGIN,END,FAIL,ALL
+#SBATCH --mail-user=qiandi@mail.harvard.edu  #Email to which will be sent
+
+cd /n/home02/xqiu/GitHub/odyssey_airpred/
+Rscript starth2o_shared.R starth2o_shared.out
